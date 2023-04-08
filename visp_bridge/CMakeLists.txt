@@ -35,7 +35,7 @@ catkin_package(
 )
 
 include_directories(include)
-
+include_directories(/usr/local/lib)
 include_directories(SYSTEM
   ${VISP_INCLUDE_DIRS}
   ${catkin_INCLUDE_DIRS}
@@ -57,7 +57,6 @@ add_library(${PROJECT_NAME}
   src/conversions/image.cpp
 )
 target_link_libraries(${PROJECT_NAME} ${VISP_LIBRARIES})
-
 add_executable(${PROJECT_NAME}_convert_camera_parameters src/conversions/convert_cam_param_file.cpp)
 target_link_libraries(${PROJECT_NAME}_convert_camera_parameters ${VISP_LIBRARIES} ${catkin_LIBRARIES} ${Boost_LIBRARIES} ${PROJECT_NAME})
 
